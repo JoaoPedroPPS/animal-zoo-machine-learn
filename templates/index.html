@@ -11,8 +11,12 @@
 </head>
 
 <body style="background: #F3B309; overflow-y: scroll;">
+  <img src="{{ url_for('static', filename='animais.png') }}" alt="Minha Figura" style="width: 220px;">
+
+
  <div class="login">
-	<h1>Classificador de espécies ZOO</h1>
+  
+	<p>Classificador de espécies ZOO</p>
 
     <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}" method="post" >
