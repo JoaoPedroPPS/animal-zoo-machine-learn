@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment ML Project</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body style="background: #F3B309; overflow-y: scroll;">
+ <div class="login">
+	<h1>Classificador de espécies ZOO</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post" >
+        <input type="text" name="hair" placeholder="Tem Cabelo? (1- sim 0- não)" required="required" />
+        <input type="text" name="feathers" placeholder="Tem penas? (1- sim 0- não)" required="required" />
+        <input type="text" name="eggs" placeholder="Bota ovos? (1- sim 0- não)" required="required" />
+        <input type="text" name="milk" placeholder="Produz leite? (1- sim 0- não)" required="required" />
+        <input type="text" name="airborne" placeholder="Voa? (1- sim 0- não)" required="required" />  
+        <input type="text" name="aquatic" placeholder="É aquático? (1- sim 0- não)" required="required" />
+        <input type="text" name="predator" placeholder="É predador? (1- sim 0- não)" required="required" />
+        <input type="text" name="toothed" placeholder="Tem dente? (1- sim 0- não)" required="required" />
+        <input type="text" name="backbone" placeholder="É Vertebrado? (1- sim 0- não)" required="required" />
+        <input type="text" name="breathes" placeholder="Respira ar? (1- sim 0- não)" required="required" />
+        <input type="text" name="venomous" placeholder="Venenoso? (1- sim 0- não)" required="required" />  
+        <input type="text" name="fins" placeholder="Possui brânquias? (1- sim 0- não)" required="required" />
+        <input type="text" name="legs" placeholder="Quantidade de Pernas:" required="required" />
+        <input type="text" name="tail" placeholder="Possui Rabo? (1- sim 0- não)" required="required" />
+        <input type="text" name="domestic" placeholder="É domesticado? (1- sim 0- não)" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Classificar Animal</button>
+    </form>
+
+    <br>
+    <br>
+    {{ prediction_text }}
+ </div>
+</body>
+</html>
